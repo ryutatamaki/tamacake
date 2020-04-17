@@ -15,7 +15,28 @@
         <h1><?=$title ?></h1>
     </header>
     <div class="row">
-        <p><?=$message ?></p>
+            <pre><?php print_r($data); ?></pre>
+    </div>
+    <div class="row">
+        <table>
+            <?= $this->Form->create(null, [
+                'type' => 'post',
+                'url' => ['controller' => 'Hello', 'action' => 'index']
+            ]) ?>
+                <tr>
+                    <th>Select</th>
+                    <td><?= $this->Form->select('Form1.select',
+                            ['one' => '最初', 'two' => '真ん中', 'three' => '最後'],
+                            ['multiple' => true, 'size' => 5]
+                        )?>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><?= $this->Form->submit('送信') ?></td>
+                </tr>
+            <?= $this->Form->end() ?>
+        </table>
     </div>
 </body>
 </html>
