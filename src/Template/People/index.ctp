@@ -11,7 +11,7 @@
 <?php foreach($data as $obj): ?>
 <tr>
     <td><?= h($obj->id) ?></td>
-    <td><?= h($obj->name) ?></td>
+    <td><a href="<?= $this->Url->build(['controller' => 'People', 'action' => 'edit']); ?>?id=<?= $obj->id ?>"><?= h($obj->name) ?></a></td>
     <td><?= h($obj->mail) ?></td>
     <td><?= h($obj->age) ?></td>
 </tr>
