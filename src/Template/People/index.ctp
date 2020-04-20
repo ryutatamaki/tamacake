@@ -6,6 +6,7 @@
         <th>name</th>
         <th>mail</th>
         <th>age</th>
+        <th></th>
     </tr>
 </thead>
 <?php foreach($data as $obj): ?>
@@ -14,6 +15,7 @@
     <td><a href="<?= $this->Url->build(['controller' => 'People', 'action' => 'edit']); ?>?id=<?= $obj->id ?>"><?= h($obj->name) ?></a></td>
     <td><?= h($obj->mail) ?></td>
     <td><?= h($obj->age) ?></td>
+    <td><a href="<?= $this->Url->build(['controller' => 'People', 'action' => 'delete']); ?>?id=<?= $obj->id ?>">削除</a></td>
 </tr>
 <?php endforeach;?>
 </table>

@@ -1,6 +1,6 @@
 <?= $this->Form->create($entity, [
-    'type' => 'post',
-    'url' => ['controller' => 'people', 'action' => 'update']
+        'type' => 'post',
+        'url' => ['controller' => 'people', 'action' => 'update']
     ])
 ?>
 <?= $this->Form->hidden('People.id') ?>
