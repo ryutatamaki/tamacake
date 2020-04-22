@@ -6,7 +6,16 @@ use App\Controller\AppController;
 class PeopleController extends AppController {
 
     public function index() {
-        $data = $this->People->find('all');
+        if ($this->request->is('post')) {
+            $find = $this->request->data['People']['find'];
+            $condition = [
+                'conditions' => ['name' => $find],
+                'order' => ['People.id' => 'desc']
+            ];
+            $data = $this->People->find('all', $condition);
+        } else {
+            $data = $this->People->find('all');
+        }
         $this->set('data', $data);
     }
 
