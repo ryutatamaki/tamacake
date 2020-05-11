@@ -1,2 +1,1 @@
-<p>This is sample content.</p>
-<p>これは、Helloレイアウトを利用したサンプルです。</p>
+<?= $this->Text->autoParagraph("one\ntwo\nthree") ?>
